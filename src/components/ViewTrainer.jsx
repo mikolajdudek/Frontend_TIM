@@ -42,7 +42,7 @@ class ViewTrainer extends Component {
                 <div className="card col-md-6 offset-md-3">
                     <h3 className="text-center">Jego podopieczni</h3>
                     <div className="card-body">
-                        {this.state.empls.map((war) =>
+                        {this.state.wars.map((war) =>
                             <div className="row" key={war.name} style={{margin: 10}}>
                                 <label><b>Imie: </b>{ war.name } </label>
                                 <label><b>Nazwisko: </b>{ war.surname }</label>

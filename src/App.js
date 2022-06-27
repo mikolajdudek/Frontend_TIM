@@ -10,15 +10,20 @@ import AddTrainer from './components/AddTrainer';
 import UpdateTrainer from './components/UpdateTrainer';
 import ViewTrainer from './components/ViewTrainer';
 import TrainerList from './components/TrainerList';
+import LoginComponent from './components/LoginComponent';
+
 
 function App() {
+
+  
   return (
     <div>
       <Router>
         <HeaderComponent/>
             <div className="container">
               <Switch>
-                <Route path = "/" exact component = {WardList}></Route>
+                <Route path="/" exact component={LoginComponent} />
+                <Route path="/login" component={LoginComponent} />
                 <Route path = "/wards" component = {WardList}></Route>
                 <Route path = "/trainers" component = {TrainerList}></Route>
                 <Route path = "/add-ward" component = {AddWard}></Route>
@@ -29,8 +34,8 @@ function App() {
                 <Route path = "/view-trainer/:id" component = {ViewTrainer}></Route>
                 <WardList/>
               </Switch>
-            </div> 
-              
+            </div>
+
       </Router>
     </div>
   );
