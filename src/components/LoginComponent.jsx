@@ -6,7 +6,7 @@ class LoginComponent extends Component {
 		super(props);
 
 		this.state = {
-			username: localStorage.getItem('user') || '',
+			username: localStorage.getItem('USER') || '',
 			password: '',
 			token: localStorage.getItem('token') || '',
 			hasLoginFailed: false,
@@ -29,8 +29,9 @@ class LoginComponent extends Component {
 				this.setState({
 					token: response.headers.authorization
 				});
-				//AuthenticationService.registerSuccessfulLoginForJwt(this.state.username, this.state.token);
-				this.props.history.push('/api/trainers');
+				localStorage.setItem('token', response.headers.authorization);
+				// AuthenticationService.registerSuccessfulLoginForJwt(this.state.username, this.state.token);
+				this.props.history.push('/trainers');
 			})
 			.catch(() => {
 				console.log('??/');

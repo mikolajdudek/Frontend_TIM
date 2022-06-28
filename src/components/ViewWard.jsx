@@ -27,14 +27,17 @@ class ViewWard extends Component {
                 <div className="card col-md-6 offset-md-3">
                     <h3 className="text-center">Informacje o podopiecznym</h3>
                     <div className="card-body">
-                        <div className="row">
+                        <div className="text-center" >
                             <label><b>Imię: </b>{ this.state.ward.name } </label>
+                            <h1></h1>
                             <label><b>Nazwisko: </b>{ this.state.ward.surname }</label>
-                            <label><b>Imię trenera: </b>{ this.state.ward.managerName }</label>
+                            <h1></h1>
+                            <label><b>Imię trenera: </b>{ this.state.ward.trainerName }</label>
+                            <h1></h1>
                             <label><b>Kod trenera: </b>{ this.state.ward.code }</label>
                         </div>
                     </div>
-                    <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft:"10px"}}>Powrót</button>
+                    <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft:"100px" , marginRight:"100px"}}>Powrót</button>
                 </div>
             </div>
         )
