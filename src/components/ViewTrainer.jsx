@@ -8,7 +8,7 @@ class ViewTrainer extends Component {
         this.state = {
             id: this.props.match.params.id,
             trainer: {},
-            wars: [],
+            wards: [],
         }
     }
 
@@ -17,13 +17,13 @@ class ViewTrainer extends Component {
         TrainerService.getTrainerById(this.state.id).then(res => {
             console.log(res.data)
             this.setState({trainer: res.data});
-            this.setState({wars : this.state.trainer.wards})
+            this.setState({wards : this.state.trainer.ward})
         });
     }
 
 
     cancel () {
-        this.props.history.push('/wards');
+        this.props.history.push('/trainers');
     }
 
     render() {
@@ -32,20 +32,27 @@ class ViewTrainer extends Component {
                 <div className="card col-md-6 offset-md-3">
                     <h3 className="text-center">Informacje o trenerze</h3>
                     <div className="card-body">
-                        <div className="row">
+                        <div className="text-center">
+                            <h1></h1>
                             <label><b>Imie: </b>{ this.state.trainer.name } </label>
+                            <h1></h1>
                             <label><b>Nazwisko: </b>{ this.state.trainer.surname }</label>
+                            <h1></h1>
+                            <label><b>Kod trenera: </b>{ this.state.trainer.code }</label>
                         </div>
                     </div>
                 </div>
 
                 <div className="card col-md-6 offset-md-3">
                     <h3 className="text-center">Jego podopieczni</h3>
-                    <div className="card-body">
-                        {this.state.wars.map((war) =>
-                            <div className="row" key={war.name} style={{margin: 10}}>
+                    <div className="text-center">
+                    {this.state.wards.map((war) =>
+                            <div className="text-center" key={war.name} style={{margin: 10}}>
+                                <h1></h1>
                                 <label><b>Imie: </b>{ war.name } </label>
+                                <h1> </h1>
                                 <label><b>Nazwisko: </b>{ war.surname }</label>
+                                <h1>-----------------</h1>
                             </div>)}
                     </div>
                     <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft:"10px"}}>Powrót</button>

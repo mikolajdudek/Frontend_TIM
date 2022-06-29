@@ -50,7 +50,6 @@ class TrainerList extends Component {
 
                 <h2 className="text-center">Trainer</h2>
                 <div className="row">
-                    <button style={{marginBottom:"10px"}} className="btn btn-warning" onClick={this.cancel.bind(this)}>Powrót do podopiecznych</button>
                     <button style={{marginBottom:"10px"}} className="btn btn-primary" onClick = {this.addTrainer}>Add Trainer</button>
                 </div>
                 <div className="row">
@@ -80,6 +79,9 @@ class TrainerList extends Component {
                         </tbody>
                     </table>
                 </div>
+                </div>
+                <div className="row">
+                <button style={{marginBottom:"10px"}} className="btn btn-warning" onClick={this.cancel.bind(this)}>Powrót do podopiecznych</button>
                 </div>
             </div>
         )
